@@ -1,0 +1,47 @@
+<div class="navbar navbar-toggle bg-inverse">
+    <a class="navbar-brand">
+        Book List
+    </a>
+</div>
+<div class="row p-3">
+    <div class="col-3 bg-info p-3">
+        {{categories.length}} Categories
+    </div>
+    <div class="col-9 bg-success p-3">
+        {{books.length}} Books
+    </div>
+</div>
+<div class="row p-3">
+    <div class="col-md-2">
+        <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">
+            All
+        </button>
+        <button *ngFor="let category of categories" class="btn-outline-primary btn btn-block shadow mb-2"
+            [class.active]="category==selectedCategory" (click)="changeCategory(category)">
+            {{category}}
+        </button>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-9 ">
+        <div *ngFor="let book of books" class="card shadow mb-2 bg-white rounded">
+            <div class="card-header">{{book.bookTitle}}</div>
+            <div class="card-body">{{book.author}}</div>
+        </div>
+
+
+        <div class="form-inline float-sm-left p-1">
+            <select class="form-control" [value]="bookPerPage" (change)="changePageSize($event.target.value)">
+                <option value="3">3 per page </option>
+                <option value="4">4 per page </option>
+                <option value="6">6 per page </option>
+                <option value="8">8 per page </option>
+            </select>
+        </div>
+        <div class="btn-group float-sm-right p-1">
+            <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
+                [class.active]="page==selectedPage">
+                {{page}}
+            </button>
+        </div>
+    </div>
+</div>
