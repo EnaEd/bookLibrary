@@ -1,3 +1,4 @@
+import { Reader } from './reader';
 import { Injectable } from "@angular/core";
 import { Book } from './book.model';
 import { Observable } from 'rxjs';
@@ -17,10 +18,21 @@ export class StaticDataSource {
         new Book(8, "Nineteen Eighty-Four", "George Orwell", "BestSeller"),
         new Book(9, "The Lion, the Witch and the Wardrobe", "CS Lewis", "BestSeller"),
         new Book(10,"The Hobbit", "JRR Tolkien","Fantasy")];
+
+    private readers:Reader[]=[
+        new Reader(1,"Ed Ena",[1]),
+        new Reader(2,"Jhon Dow",[2,3,6] )
+    ]    
         
     getBooks(): Observable<Book[]> {
         return observableFrom([this.books]);
     }
+
+    getReaders():Observable<Reader[]>{
+        return observableFrom([this.readers]);
+    }
+        
+    
     //#region booklist
     // 10. Jane Eyre, Charlotte Brontë
     // 11. Catch-22, Joseph Heller

@@ -15,7 +15,7 @@ export class BookListComponent {
     get books(): Book[] {
         let pageIndex = (this.selectedPage - 1) * this.bookPerPage;
         return this.repository.getBooks(this.selectedCategory)
-            .splice(pageIndex,  this.bookPerPage); //splice returned array from index for deletedcaunt
+            .splice(pageIndex, this.bookPerPage); //splice returned array from index for deletedcaunt
     }
     get categories(): string[] {
         return this.repository.getCategories();
@@ -32,9 +32,13 @@ export class BookListComponent {
         this.changePage(1);// 1 for apply new index's array
     }
 
-    get pageNumbers(): number[] {
-        return Array(Math.ceil(this.repository.getBooks(this.selectedCategory).length / this.bookPerPage))
-            .fill(0).map((x, i) => i + 1);
+    // get pageNumbers(): number[] {
+    //     return Array(Math.ceil(this.repository.getBooks(this.selectedCategory).length / this.bookPerPage))
+    //         .fill(0).map((x, i) => i + 1);
+    // }
+
+    get pageCount(): number {
+        return Math.ceil(this.repository.getBooks(this.selectedCategory).length / this.bookPerPage);
     }
 
 }
