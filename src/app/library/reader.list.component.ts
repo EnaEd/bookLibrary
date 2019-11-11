@@ -1,6 +1,18 @@
+import { ReaderRepository } from './../repositories/reader.repository';
 import { Component } from "@angular/core";
+import { Reader } from '../models/reader';
 
 @Component({
-    template:`<div><h3 class bg-info p-1> Readers list</h3></div>`
+    selector: "readerList",
+    templateUrl:"reader.list.component.html"
 })
-export class ReaderListComponent{}
+export class ReaderListComponent{
+    
+    constructor(private readerRepository:ReaderRepository) {
+        
+    }
+
+    get Readers():Reader[]{
+        return this.readerRepository.getReaders();
+    }
+}

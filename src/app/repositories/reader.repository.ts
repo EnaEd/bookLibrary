@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ReaderRepository {
-    private readers: Reader[];
+    private readers: Reader[]=[];
 
     constructor(private dataSource: StaticDataSource) {
         dataSource.getReaders().subscribe(data => {

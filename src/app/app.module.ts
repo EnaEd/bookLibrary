@@ -1,3 +1,4 @@
+import { ReaderListModule } from './library/reader.list.module';
 import { ReaderListComponent } from './library/reader.list.component';
 import { BookListComponent } from './library/book.list.component';
 import { RouterModule } from '@angular/router';
@@ -11,7 +12,7 @@ import { AppComponent } from './app.component';
 import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
-  imports:[BrowserModule,BookListModule,AppRoutingModule,RouterModule.forRoot([
+  imports:[BrowserModule,BookListModule,ReaderListModule,AppRoutingModule,RouterModule.forRoot([
     {path:"bookList",component:BookListComponent},
     {path:"readerList",component:ReaderListComponent},
     {path:"**",redirectTo:"/bookList"}

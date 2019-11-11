@@ -9,7 +9,7 @@ import { from } from 'rxjs';
 
 @NgModule({
     imports:[BookModule,BrowserModule],
-    declarations:[BookListComponent,CounterDirective,ReaderListComponent],
-    exports:[BookListComponent,ReaderListComponent]
+    declarations:[BookListComponent,CounterDirective],
+    exports:[BookListComponent]
 })
 export class BookListModule{}
