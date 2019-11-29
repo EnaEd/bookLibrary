@@ -1,1 +1,6 @@
-<div>Reader detail</div>
+<div class="d-flex justify-content-center">{{ReaderName}}</div>
+<div class="d-flex justify-content-center">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor=" let book of ReaderBooks">{{book.bookTitle}}</li>
+    </ul>
+</div>

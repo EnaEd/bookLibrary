@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
   imports:[BrowserModule,BookListModule,ReaderListModule,ReaderDetailModule,AppRoutingModule,RouterModule.forRoot([
     {path:"bookList",component:BookListComponent},
     {path:"readerList",component:ReaderListComponent},
-    {path:"readerDetail",component:ReaderDetailComponent},
+    {path:"readerDetail/:id",component:ReaderDetailComponent},
     {path:"**",redirectTo:"/bookList"},
   ])],
   declarations: [

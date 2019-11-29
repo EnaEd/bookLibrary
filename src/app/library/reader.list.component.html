@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div *ngFor="let reader of Readers" class="card shadow mb-2" [class.active]="reader==selectedReader"
-                (click)="changeReader(reader)" (dblclick)="toDetailReader()">
+                (click)="changeReader(reader)" (dblclick)="toDetailReader(reader.id)">
                 <img class="card-img-top" src="#" alt="Cards image" style="width: 100%;">
                 <div class="card-body">
                     <h4 class="card-title">

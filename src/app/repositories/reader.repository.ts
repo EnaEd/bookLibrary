@@ -20,6 +20,10 @@ export class ReaderRepository {
         return this.readers;
     }
 
+    getReader(id:number):Reader{
+        return this.readers.find(reader=>reader.id==id);
+    }
+
     getBooksInHand(reader: Reader = null): Book[] {
         return this.books.filter(x => {
             if (reader == null) {

@@ -27,8 +27,8 @@ export class ReaderListComponent {
     changeReader(newReader?: Reader) {
         this.selectedReader = newReader;
     }
-    toDetailReader(){
-        this.router.navigate(['readerDetail']);
+    toDetailReader(readerId:number){
+        this.router.navigate(['readerDetail',readerId]);
     }
 
 }
