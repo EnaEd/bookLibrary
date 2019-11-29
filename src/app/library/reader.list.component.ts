@@ -10,7 +10,7 @@ import { Book } from '../models/book.model';
 })
 export class ReaderListComponent {
 
-    public selectedReader:Reader = null;
+    public selectedReader: Reader = null;
 
     constructor(private readerRepository: ReaderRepository, private bookRepository: BookRepository) {
 
@@ -24,5 +24,11 @@ export class ReaderListComponent {
         return this.readerRepository.getBooksInHand(this.selectedReader);
     }
 
-    
+    changeReader(newReader?: Reader) {
+        this.selectedReader = newReader;
+    }
+    toDetailReader(){
+        alert('dbl click');
+    }
+
 }

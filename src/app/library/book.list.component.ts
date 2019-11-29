@@ -23,6 +23,7 @@ export class BookListComponent {
     }
     changeCategory(newCategory?: string) {
         this.selectedCategory = newCategory;
+        this.changePage(1)//for start first page on new category
     }
 
     changePage(newPage: number) {
