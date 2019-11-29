@@ -1,6 +1,6 @@
+import { Router } from '@angular/router';
 import { Reader } from './../models/reader';
 import { ReaderRepository } from './../repositories/reader.repository';
-import { BookRepository } from './../repositories/book.repository';
 import { Component } from "@angular/core";
 import { Book } from '../models/book.model';
 
@@ -12,7 +12,7 @@ export class ReaderListComponent {
 
     public selectedReader: Reader = null;
 
-    constructor(private readerRepository: ReaderRepository, private bookRepository: BookRepository) {
+    constructor(private readerRepository: ReaderRepository,private router:Router) {
 
     }
 
@@ -28,7 +28,7 @@ export class ReaderListComponent {
         this.selectedReader = newReader;
     }
     toDetailReader(){
-        alert('dbl click');
+        this.router.navigate(['readerDetail']);
     }
 
 }
