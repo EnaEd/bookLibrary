@@ -5,6 +5,26 @@
         </div>
     </div>
     <div class="row p-3">
-        <div class="col-3 bg-info">{{Readers.length}} Readers</div>
+        <div class="col-3 bg-info p-3">{{Readers.length}} Readers</div>
+        <div class="col-9 bg-success p-3">Books in hand</div>
     </div>
-</div>
+    <div class=" row p-3">
+        <div class="col-3 p-3">
+            <div class="card shadow mb-2">
+                <div class="card-body">
+                        <h4 class="card-title">All Readers</h4>
+                    </div>
+                </div>
+            <div *ngFor="let reader of Readers" class="card shadow mb-2">
+                <img class="card-img-top" src="#" alt="Cards image" style="width: 100%;">
+                <div class="card-body">
+                    <h4 class="card-title">{{reader.name}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-9 p-3 bg-success">
+            <div *ngFor="let book of BooksInHand" class="card shadow mb-2 bg-white rounded">
+                    <div class="card-header">{{book.bookTitle}}</div>
+                    <div class="card-body">{{book.author}}</div>
+            </div>
+        </div>
