@@ -7,10 +7,12 @@ import { BookListModule } from './library/book.list.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReaderDetailComponent } from './library/reader.detail.component';
-import { HttpClientModule }   from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS }   from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpService } from './services/http.service';
+import { ApiInterceptor } from './services/api.interceptor';
 
 @NgModule({
   imports:[BrowserModule,BookListModule,HttpClientModule,ReaderListModule,ReaderDetailModule,AppRoutingModule,RouterModule.forRoot([
@@ -22,7 +24,12 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent
   ],
-  providers: [],
+  providers: [ 
+    HttpService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApiInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
   
 })

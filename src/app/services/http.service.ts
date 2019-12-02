@@ -16,10 +16,10 @@ export class HttpService{
 
     getBookData():Observable<any>{
         
-        return this.http.get(`${this.connectionString}api/getbook`);
+        return this.http.get<any>(`${this.connectionString}api/getbook`);
     }
     getReaderData():Observable<any>{
         
-        return this.http.get(`${this.connectionString}api/getreader`);
+        return this.http.get<any>(`${this.connectionString}api/getreader`);
     }
 }
