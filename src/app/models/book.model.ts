@@ -2,7 +2,7 @@ export class Book{
     id: number;
     category: string;
     author:string;
-    bookTitle:string;
+    title:string;
 
     constructor(
         id?:number,
@@ -12,6 +12,6 @@ export class Book{
             this.id=id;
             this.author=author;
             this.category=category;
-            this.bookTitle=bookTitle;
+            this.title=bookTitle;
         }  
 }

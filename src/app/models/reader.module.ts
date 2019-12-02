@@ -1,8 +1,8 @@
-import { StaticDataSource } from './static.data.source';
 import { NgModule } from '@angular/core';
 import { ReaderRepository } from '../repositories/reader.repository';
+import { HttpService } from '../services/http.service';
 
 @NgModule({
-    providers:[ReaderRepository,StaticDataSource]
+    providers:[ReaderRepository,HttpService]
 })
 export class ReaderModule{}

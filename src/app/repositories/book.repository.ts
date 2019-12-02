@@ -1,15 +1,24 @@
-import { StaticDataSource } from './../models/static.data.source';
-import { Injectable } from "@angular/core";
+import { HttpService } from './../services/http.service';
+import { Injectable, OnInit } from "@angular/core";
 import { Book } from '../models/book.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class BookRepository {
+    
     private books: Book[] = [];
     private categories: string[] = [];
+    
 
-    constructor(private datasource: StaticDataSource) {
-        datasource.getBooks().subscribe(data => {
+    constructor(private httpService :HttpService)  {
+        // datasource.getBooks().subscribe(data => {
+        //     this.books = data;
+        //     this.categories = data.map(p => p.category).filter((x, index, array) => array.indexOf(x) == index).sort();
+        // });
+        this.httpService.getBookData().
+        subscribe(data => {
             this.books = data;
+            console.log(data);
             this.categories = data.map(p => p.category).filter((x, index, array) => array.indexOf(x) == index).sort();
         });
     }

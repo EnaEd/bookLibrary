@@ -7,12 +7,13 @@ import { BookListModule } from './library/book.list.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReaderDetailComponent } from './library/reader.detail.component';
+import { HttpClientModule }   from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports:[BrowserModule,BookListModule,ReaderListModule,ReaderDetailModule,AppRoutingModule,RouterModule.forRoot([
+  imports:[BrowserModule,BookListModule,HttpClientModule,ReaderListModule,ReaderDetailModule,AppRoutingModule,RouterModule.forRoot([
     {path:"bookList",component:BookListComponent},
     {path:"readerList",component:ReaderListComponent},
     {path:"readerDetail/:id",component:ReaderDetailComponent},
