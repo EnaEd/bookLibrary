@@ -8,7 +8,7 @@ export class ApiInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const request = req.clone(/*here add params like headers:req.headers.set()*/)
         return next.handle(request).pipe(
-            tap(event => {//for catch responce
+            tap(event => {//for catch response from server
                 if (event instanceof HttpResponse) {
                     console.log('Server response');
                 }

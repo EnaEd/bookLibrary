@@ -34,11 +34,6 @@ export class BookListComponent {
         this.changePage(1);// 1 for apply new index's array
     }
 
-    // get pageNumbers(): number[] {
-    //     return Array(Math.ceil(this.repository.getBooks(this.selectedCategory).length / this.bookPerPage))
-    //         .fill(0).map((x, i) => i + 1);
-    // }
-
     get pageCount(): number {
         return Math.ceil(this.repository.getBooks(this.selectedCategory).length / this.bookPerPage);
     }
