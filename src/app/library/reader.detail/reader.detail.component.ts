@@ -1,8 +1,8 @@
-import { ReaderRepository } from './../repositories/reader.repository';
-import { Reader } from './../models/reader';
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { Reader } from 'src/app/models/reader';
+import { ReaderRepository } from 'src/app/repositories/reader.repository';
 
 @Component({
     selector: "readerDetail",

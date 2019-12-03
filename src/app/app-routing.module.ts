@@ -1,9 +1,11 @@
+import { LoginModule } from './library/login/login.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookListComponent } from './library/book.list.component';
-import { ReaderListComponent } from './library/reader.list.component';
-import { ReaderDetailComponent } from './library/reader.detail.component';
-import { LoginComponent } from './library/login.component';
+import { BookListComponent } from './library/book.list/book.list.component';
+import { LoginComponent } from './library/login/login.component';
+import { ReaderListComponent } from './library/reader.list/reader.list.component';
+import { ReaderDetailComponent } from './library/reader.detail/reader.detail.component';
+
 
 
 const appRoutes: Routes = [

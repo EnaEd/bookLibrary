@@ -1,6 +1,6 @@
+import { Book } from './../models/book.model';
 import { HttpService } from './../services/http.service';
 import { Injectable, OnInit } from "@angular/core";
-import { Book } from '../models/book.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()

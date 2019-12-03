@@ -1,8 +1,9 @@
 import { Router } from '@angular/router';
-import { Reader } from './../models/reader';
-import { ReaderRepository } from './../repositories/reader.repository';
 import { Component } from "@angular/core";
-import { Book } from '../models/book.model';
+import { Reader } from 'src/app/models/reader';
+import { ReaderRepository } from 'src/app/repositories/reader.repository';
+import { Book } from 'src/app/models/book.model';
+
 
 @Component({
     selector: "readerList",

@@ -1,7 +1,7 @@
-import { Routes } from '@angular/router';
-import { BookRepository } from './../repositories/book.repository';
+import { BookRepository } from './../../repositories/book.repository';
+import { Book } from './../../models/book.model';
 import { Component } from "@angular/core";
-import { Book } from '../models/book.model';
+
 
 @Component({
     selector: "bookList",

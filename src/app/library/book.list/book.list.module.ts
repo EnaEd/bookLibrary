@@ -1,7 +1,7 @@
-import { CounterDirective } from './counter.derective';
+import { CounterDirective } from './../counter.derective';
+import { BookModule } from './../../models/book.module';
 import { BookListComponent } from './book.list.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { BookModule } from './../models/book.module';
 import { NgModule } from "@angular/core";
 
 
