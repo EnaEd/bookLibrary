@@ -16,7 +16,15 @@ export class LoginComponent {
 
     Login(mail: string, password: string) {
 
-        this.apiService.sendLoginData(mail, password).subscribe(x => console.log(x));
+        this.apiService.sendLoginData(mail, password).subscribe(x => 
+            {
+                if (x) {
+                    this.router.navigate(['bookList']);
+                    return;
+                }
+                console.log(x)
+            });
+        
     }
 
     ToSignUp() {

@@ -27,5 +27,9 @@ export class HttpService{
 
         return this.http.post<any>(`${this.connectionString}account/login`,{login:login,password:password});
     }
+    sendSignUpData(name:string,login:string,password:string){
+
+        return this.http.post<any>(`${this.connectionString}account/registration`,{name:name,login:login,password:password});
+    }
     
 }

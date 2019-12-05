@@ -8,7 +8,7 @@
                                 <i class="fa fa-user"></i>
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Name" >
+                    <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" >
                 </div>
             </div>
 <div class="d-flex justify-content-center col-3" >
@@ -18,7 +18,7 @@
                     <i class="fa fa-envelope-o"></i>
             </span>
         </div>
-        <input type="text" class="form-control" placeholder="Login" >
+        <input type="text" class="form-control" placeholder="Login" [(ngModel)]="login" >
     </div>
 </div>
 <div class="d-flex justify-content-center col-3" >
@@ -28,7 +28,7 @@
                     <i class="fa fa-lock"></i>
             </span>
         </div>
-        <input type="text" class="form-control" placeholder="Password" >
+        <input type="text" class="form-control" placeholder="Password" [(ngModel)]="password">
     </div>
 </div>
 <div class="d-flex justify-content-center col-3" >
@@ -38,10 +38,10 @@
                         <i class="fa fa-lock"></i>
                 </span>
             </div>
-            <input type="text" class="form-control" placeholder="Confirm password" >
+            <input type="text" class="form-control" placeholder="Confirm password" [(ngModel)]="confirmPassword">
         </div>
     </div>
 <div class="d-flex justify-content-center col-3" >
-    <button type="button" class="btn btn-primary m-3" >Sign Up</button>
+    <button type="button" class="btn btn-primary m-3" (click)="SignUp(name,login,password)" >Sign Up</button>
 </div>
 </div>
