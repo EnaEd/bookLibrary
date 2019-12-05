@@ -11,10 +11,6 @@ export class BookRepository {
     
 
     constructor(private httpService :HttpService)  {
-        // datasource.getBooks().subscribe(data => {
-        //     this.books = data;
-        //     this.categories = data.map(p => p.category).filter((x, index, array) => array.indexOf(x) == index).sort();
-        // });
         this.httpService.getBookData().
         subscribe(data => {
             this.books = data;

@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { $ } from 'protractor';
 import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 
 @Injectable()
@@ -22,4 +23,9 @@ export class HttpService{
         
         return this.http.get<any>(`${this.connectionString}api/getreader`);
     }
+    sendLoginData(login:string,password:string){
+
+        return this.http.post<any>(`${this.connectionString}account/login`,{login:login,password:password});
+    }
+    
 }

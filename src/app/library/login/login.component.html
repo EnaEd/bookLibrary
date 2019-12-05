@@ -1,13 +1,27 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+<div class="p-5">
 <div class="d-flex justify-content-center col-3" >
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">
-                    <i class="fa fa-user"></i>
+            <span class="input-group-text"  >
+                    <i class="fa fa-envelope-o"></i>
             </span>
         </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-            aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Login" [(ngModel)]="email">
     </div>
+</div>
+<div class="d-flex justify-content-center col-3" >
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >
+                    <i class="fa fa-lock"></i>
+            </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Password" [(ngModel)]="password">
+    </div>
+</div>
+<div class="d-flex justify-content-center col-3" >
+    <button type="button" class="btn btn-primary m-3" (click)="Login(email,password)" >Log In</button>
+    <button type="button" class="btn btn-primary m-3">Sign Up</button>
+</div>
 </div>
