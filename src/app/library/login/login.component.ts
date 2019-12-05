@@ -12,13 +12,15 @@ export class LoginComponent {
     email: string;
     password: string;
 
-    constructor(private apiService: HttpService, private router: Router) {
-    }
+    constructor(private apiService: HttpService, private router: Router) {}
 
     Login(mail: string, password: string) {
+
         this.apiService.sendLoginData(mail, password).subscribe(x => console.log(x));
     }
+
     ToSignUp() {
+
         this.router.navigate(['signin']);
     }
 
