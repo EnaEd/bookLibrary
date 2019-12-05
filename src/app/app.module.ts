@@ -1,3 +1,4 @@
+import { SigninModule } from './library/registration/signin.module';
 import { BookListModule } from './library/book.list/book.list.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,7 @@ import { ReaderDetailModule } from './library/reader.detail/reader.detail.module
   imports:[
     BrowserModule,
     LoginModule,
+    SigninModule,
     BookListModule,
     HttpClientModule,
     ReaderListModule,
