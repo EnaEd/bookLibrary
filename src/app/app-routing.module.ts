@@ -5,6 +5,7 @@ import { BookListComponent } from './library/book.list/book.list.component';
 import { LoginComponent } from './library/login/login.component';
 import { ReaderListComponent } from './library/reader.list/reader.list.component';
 import { ReaderDetailComponent } from './library/reader.detail/reader.detail.component';
+import { SigninComponent } from './library/registration/signin.component';
 
 
 
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   { path: "readerList", component: ReaderListComponent },
   { path: "readerDetail/:id", component: ReaderDetailComponent },
   { path: "login", component: LoginComponent },
+  { path: "signin", component: SigninComponent },
   { path: "**", redirectTo: "/login" },
 ];
 
