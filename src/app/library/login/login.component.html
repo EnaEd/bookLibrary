@@ -1,27 +1,34 @@
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    in
+    tegrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="badge badge-danger text-wra" [ngClass]="{'invisible': isErrorExist}">
+    Login or password incorrect
+</div>
 <div class="p-5">
-<div class="d-flex justify-content-center col-3" >
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text"  >
+    <div class="d-flex justify-content-center col-3">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
                     <i class="fa fa-envelope-o"></i>
-            </span>
+                </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Login" [(ngModel)]="email">
         </div>
-        <input type="text" class="form-control" placeholder="Login" [(ngModel)]="email">
     </div>
-</div>
-<div class="d-flex justify-content-center col-3" >
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" >
+    <div class="d-flex justify-content-center col-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
                     <i class="fa fa-lock"></i>
-            </span>
+                </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Password" [(ngModel)]="password">
         </div>
-        <input type="text" class="form-control" placeholder="Password" [(ngModel)]="password">
     </div>
+
 </div>
-<div class="d-flex justify-content-center col-3" >
-    <button type="button" class="btn btn-primary m-3" (click)="Login(email,password)" >Log In</button>
-    <button type="button" class="btn btn-primary m-3" (click)="ToSignUp()"  >Sign Up</button>
-</div>
+<div class="d-flex justify-content-center col-3">
+    <button type="button" class="btn btn-primary m-3" (click)="Login(email,password)">Log In</button>
+    <button type="button" class="btn btn-primary m-3" (click)="ToSignUp()">Sign Up</button>
 </div>
