@@ -3,6 +3,7 @@ import { HttpService } from './../services/http.service';
 import { Injectable, OnInit } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable()
 export class BookRepository {
     
@@ -14,9 +15,9 @@ export class BookRepository {
         this.httpService.getBookData().
         subscribe(data => {
             this.books = data;
-            console.log(data);
             this.categories = data.map(p => p.category).filter((x, index, array) => array.indexOf(x) == index).sort();
-        });
+        }
+        );
     }
     getBooks(category: string = null): Book[] {
         return this.books.filter(x => category == null || x.category == category);

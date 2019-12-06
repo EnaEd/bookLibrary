@@ -11,10 +11,6 @@ export class ReaderRepository {
     constructor(private httpService: HttpService) {
         httpService.getReaderData().subscribe(data => {
             this.readers = data;
-            console.log(data);
-        });
-        httpService.getBookData().subscribe(data => {
-            this.books = data;
         });
     }
     getReaders() {

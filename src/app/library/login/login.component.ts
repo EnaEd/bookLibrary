@@ -18,10 +18,10 @@ export class LoginComponent {
 
         this.apiService.sendLoginData(mail, password).subscribe(x => 
             {
-                if (x) {
-                    this.router.navigate(['bookList']);
-                    return;
-                }
+                // if (x) {
+                //     this.router.navigate(['bookList']);
+                //     return;
+                // }
                 console.log(x)
             });
         
