@@ -1,8 +1,8 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     in
     tegrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<div class="badge badge-danger text-wra" [ngClass]="{'invisible': isErrorExist}">
-    Login or password incorrect
+<div class="badge badge-danger text-wra" [ngClass]="{'invisible': isErrorInvisible}">
+    {{error}}
 </div>
 <div class="p-5">
     <div class="d-flex justify-content-center col-3">

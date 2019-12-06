@@ -13,9 +13,10 @@ const appRoutes: Routes = [
   { path: "bookList", component: BookListComponent },
   { path: "readerList", component: ReaderListComponent },
   { path: "readerDetail/:id", component: ReaderDetailComponent },
+ // { path: "login", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "signin", component: SigninComponent },
-  { path: "**", redirectTo: "/login" },
+  { path: "**", redirectTo: "/bookList" },
 ];
 
 @NgModule({

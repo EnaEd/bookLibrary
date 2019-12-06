@@ -1,22 +1,24 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { HttpService } from 'src/app/services/http.service';
+import { switchMap } from 'rxjs/operators';
+import { parseLazyRoute } from '@angular/compiler/src/aot/lazy_routes';
 
 
 @Component({
     selector: "login",
     templateUrl: "login.component.html"
 })
-export class LoginComponent {
+export class LoginComponent  {
     email: string;
     password: string;
     error: string;
-    isErrorExist: boolean;
+    isErrorInvisible: boolean;
 
-    constructor(private apiService: HttpService, private router: Router) {
-        this.isErrorExist = true;
+    constructor(private apiService: HttpService, private router: Router,private route: ActivatedRoute) {
+        this.isErrorInvisible = true;
     }
 
     Login(mail: string, password: string) {
@@ -26,7 +28,7 @@ export class LoginComponent {
                 err => {
                     if (err instanceof HttpErrorResponse) {
                         this.error = err.status.toString();
-                        this.isErrorExist = false;
+                        this.isErrorInvisible = false;
                     }
                 });
 
